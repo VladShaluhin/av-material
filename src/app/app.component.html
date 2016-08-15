@@ -1,3 +1,7 @@
 <h1>
   {{title}}
 </h1>
+<form [formGroup]="myForm" novalidate (ngSubmit)="save(myForm)">
+	<av-input [value]="title" (change)="onChange($event)"></av-input>
+	<button type="submit" [disabled]="!myForm.valid">Submit</button>
+</form>
